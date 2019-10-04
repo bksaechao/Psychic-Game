@@ -12,14 +12,25 @@ document.getElementById("w").innerHTML = win;
 document.getElementById("l").innerHTML = loss;
 document.getElementById("gl").innerHTML = guessesLeft;
 document.getElementById("cg").innerHTML = currentGuesses;
-//Computer picks a random letter
-//testing global variable
-var pickLetter = alphabet[Math.floor(Match.random() * alphabet.length)];
 
 document.onkeyup = function (event) {
     //-1 guess
     guessesLeft--;
     gl.innerHTML = guessesLeft;
+    //Computer picks random letter
+    var pickLetter = alphabet[Math.floor(Math.random() * alphabet.length)];
+
+    console.log(pickLetter)
     //User Guess
     var userGuess = event.key;
-}
+    //displays userGuess on Current guesses
+    currentGuesses.push(userGuess);
+    cg.innerHTML = currentGuesses;
+
+
+
+
+    //Compare results
+};
+
+
